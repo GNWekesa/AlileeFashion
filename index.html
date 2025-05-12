@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alilee Brushes</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS to deliver icons to my contact section-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap CSS to deliver icons to my footer section-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/basic.css">
+</head>
+<body>
+
+
+  <!-- this is a placeholder, navbar code should be here but i have placed it in a partials folder, i shall use JS to load it. -->
+  <div id="navbar-placeholder"></div>
+      <!-- Hero Section Start -->
+  <section id="home" class="vh-100 d-flex align-items-center position-relative" style="background: url('/images/working\ brush\ 2.jpg') no-repeat center center/cover;">
+  <!-- Bluish Overlay -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 42, 75, 0.85); z-index: 0;"></div>
+      <!-- Hero Text Content (z-index must be higher) -->
+      <div class="container text-center text-white position-relative" style="z-index: 1;">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <h1 class="display-4 fw-bold">Welcome to Alilee Transformed</h1>
+            <p class="lead">Turning Tyre Waste into Opportunity</p>
+            <!-- belows links to the html page-->
+            <a href="mailto:alileetransformedltd@gmail.com">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Hero Section -->
+
+      <!-- About Us Section -->
+      <section id="about" ><!-- i removed this class="py-5 bg-light" to ensure it uses the !important bg color-->
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0">
+              <img src="/images/working brush 1.jpg" alt="About Me" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6">
+              <h2 class="fw-bold mb-3">About Alilee</h2>
+              <p class="lead">We are a Kenyan-based startup dedicated to solving the growing problem of tyre waste through sustainable innovation. Our mission is to repurpose waste tyre material—specifically tyre dust from the retreading process—into durable, eco-friendly products for construction, landscaping, and other industries.</p>
+              <p>
+                By combining recycled rubber with polyurethane (PU) binders, we’re creating a cleaner future while reducing environmental pollution and generating green jobs. Our solution is simple, local, and scalable—designed to serve both the environment and the economy.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of About Us Section -->
+       
+      <!-- contact form section-->
+      <section id="contact" class="contact-section" style="background-color: #f9f5e3; padding: 60px 0;">
+        <div class="container">
+          <h2 class="text-center mb-4">Get in Touch</h2>
+          <p class="text-center mb-5">Have questions or want to request a quote? Fill out the form below and we'll get back to you!</p>
+
+           <!-- belows links to the html page-->
+            <a href="mailto:alileetransformedltd@gmail.com">Email Us</a>
+      
+      <!-- load the footer-->
+    <div id="footer-placeholder"></div>
+
+
+      <!-- scroll to top icon-->
+      <a href="#" class="scrollup" id="scroll-up">
+        <i class="fas fa-arrow-up scrollup__icon"></i>
+      </a>
+      
+      <!-- Bootstrap JS Bundle (required for responsive navbar) -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/js/form.js"></script>
+
+      <!-- floating whatsapp icon-->
+      <!-- my floating whatsapp icon-->
+    <a href="https://wa.me/+254785687846" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script>
+    // this goes to all html pages to load navbar dynamically
+    fetch('/partials/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+        // Re-initialize Bootstrap components if needed
+        new bootstrap.Collapse(document.getElementById('navbarNav'));
+      });
+
+      // this goes to all html pages to load footer dynamically
+      fetch('/partials/footer.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('footer-placeholder').innerHTML = html;
+        });
+   </script>
+    <!-- Load partials script -->
+    <script src="/js/loadpartials.js"></script>
+
+   <!-- scroll-up button HTML  -->
+<a href="#" id="scroll-up" class="scrollup" aria-label="Scroll to top">
+  <i class="bi bi-arrow-up scrollup__icon"></i>
+</a>
+</body>
+</html>
