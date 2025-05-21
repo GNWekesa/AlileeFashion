@@ -26,6 +26,10 @@ html {
   color: #001C6C !important;
 }
 
+section {
+  padding: 2rem 0; /* Top and bottom padding */
+}
+
 
 /* style for the floating whatsapp icon */
 .whatsapp-float {
@@ -102,4 +106,23 @@ body, html {
   color: #f9f5e3;
 }
 
+/*FOOTER STYLING*/
+/*Styling for my footer*/
+.site-footer {
+  background-color: #001C6C;
+  color: white;  /* White text color for contrast and readability */
+}
 
+.site-footer a {/*style for links*/
+  color: white;
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: #ccc;
+}
+
+.site-footer hr {/*style for the horizontal rule on the footer, wherever i place <hr>, it shall draw it*/
+  border-top: 1px solid white;
+}
+/*End of styling for my footer*/
